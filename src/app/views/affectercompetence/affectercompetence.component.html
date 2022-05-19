@@ -1,0 +1,88 @@
+<div
+  class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0"
+>
+  <div class="rounded-t bg-white mb-0 px-6 py-6">
+    <div class="text-center flex justify-between">
+      <h6 class="text-blueGray-700 text-xl font-bold">Affecter une competence</h6>
+   
+    </div>
+  </div>
+  <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+    <form [formGroup]="_competenceService.formAffectation" autocomplete="off" (ngSubmit)="onSubmit()">
+ 
+      <div class="flex flex-wrap">
+ 
+        <div class="w-full lg:w-4/12 px-4">
+          <div class="relative w-full mb-3">
+            <label
+              class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+              htmlFor="grid-password"
+            >
+              Competence
+            </label>
+            <select
+               class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+              placeholder="competence"
+              formControlName="competence"
+              [class.is-invalid]="_competenceService.formAffectation.controls['competence'].errors?.required"
+
+             >
+             <option  *ngFor="let competence of _competenceService.listCompetence"
+             [value]="competence.id_competence" > {{competence.titre}}</option>
+             </select>
+          </div>
+        </div>
+        <div class="w-full lg:w-4/12 px-4">
+          <div class="relative w-full mb-3">
+            <label
+              class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+              htmlFor="grid-password"
+            >
+              Utilisateur
+            </label>
+            <select
+               class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+              placeholder="Utilisateur"
+              formControlName="utilisateur"
+              [class.is-invalid]="_competenceService.formAffectation.controls['utilisateur'].errors?.required"
+             
+             >
+             <option *ngFor="let user of _utilisateurService.listUtilisateur" [value]="user.id_utilisateur" > {{user.nom}} {{user.prenom}} </option>
+
+             </select>
+          </div>
+        </div>
+        <div class="w-full lg:w-4/12 px-4">
+            <div class="relative w-full mb-3">
+              <label
+                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="grid-password"
+              >
+              Années d'experience
+              </label>
+              <input
+                type="number"
+                min="1"
+                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                placeholder="Experience"
+                formControlName="experience"
+                [class.is-invalid]="_competenceService.formAffectation.controls['experience'].errors?.required"
+              
+              />
+            </div>
+          </div>
+
+      </div>
+ 
+ 
+      <div class="align-self-center mx-auto text-center" style="padding-top: 15px;">
+      <button  *ngIf="!submit" 
+      class="bg-red-600 text-white active:bg-red-700 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+      type="submit"  
+      >
+      Affecter
+    </button></div>
+    <div *ngIf="submit" class="alert alert-success" style="background-color: rgb(98, 223, 98);height: 50px;text-align: center;">Une compétence a été affecter avec succès</div>
+</form>
+  </div>
+</div>
