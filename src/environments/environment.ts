@@ -8,6 +8,7 @@ export const environment = {
     UtilisateurApiUrl :'http://localhost:8080/Utilisateurs',
     CompetenceApiUrl : 'http://localhost:8080/Competences',
     UserCompetenceApiUrl : 'http://localhost:8080/UserCompetence',
+    ProjetApiUrl : 'http://localhost:8080/Projets'
 };
 
 /*

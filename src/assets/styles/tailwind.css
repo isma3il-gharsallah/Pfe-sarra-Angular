@@ -3185,7 +3185,20 @@ select {
   --tw-text-opacity: 1;
   color: rgba(220, 38, 38, var(--tw-text-opacity));
 }
+.text-blue-300 {
+  --tw-text-opacity: 1;
+  color: rgba(147,197,253, var(--tw-text-opacity));
+}
 
+.text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgba(59,130,246, var(--tw-text-opacity));
+}
+
+.text-blue-600 {
+  --tw-text-opacity: 1;
+  color: rgba(37,99,235, var(--tw-text-opacity));
+}
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgba(113, 113, 122, var(--tw-text-opacity));

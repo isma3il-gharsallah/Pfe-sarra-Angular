@@ -60,6 +60,20 @@ import { UpdatecompetenceComponent } from './views/updatecompetence/updatecompet
 import { DeletecompetenceComponent } from './views/deletecompetence/deletecompetence.component';
 import { AffectercompetenceComponent } from './views/affectercompetence/affectercompetence.component';
 import { DetailcompetenceComponent } from './views/detailcompetence/detailcompetence.component';
+import { ChefComponent } from './layouts/chef/chef.component';
+import { SidebarChefComponent } from './components/sidebar-chef/sidebar-chef.component';
+import { ChefNavbarComponent } from './components/navbars/chef-navbar/chef-navbar.component';
+ import { DashbordChefComponent } from './views/dashbord-chef/dashbord-chef.component';
+import { UserDropdownNotificationComponent } from "./components/dropdowns/user-dropdown-Notification/user-dropdown.component";
+import { HeaderChefComponent } from './components/headers/header-chef/header-chef.component';
+import { UserDropdownChefComponent } from "./components/dropdowns/user-dropdown-chef/user-dropdown.component";
+import { GestionprojetsComponent } from './views/gestionprojets/gestionprojets.component';
+import { AddprojetComponent } from './views/addprojet/addprojet.component';
+import { AddprojetadminComponent } from './views/addprojetadmin/addprojetadmin.component';
+import { DatePipe } from "@angular/common";
+import { ListeprojetadminComponent } from './views/listeprojetadmin/listeprojetadmin.component';
+import { DetailsprojetComponent } from './views/detailsprojet/detailsprojet.component';
+import { GanttComponent } from './views/gantt/gantt.component';
 
 
 @NgModule({
@@ -105,7 +119,20 @@ import { DetailcompetenceComponent } from './views/detailcompetence/detailcompet
     UpdatecompetenceComponent,
     DeletecompetenceComponent,
     AffectercompetenceComponent,
-    DetailcompetenceComponent
+    DetailcompetenceComponent,
+    ChefComponent,
+    SidebarChefComponent,
+    ChefNavbarComponent,
+     DashbordChefComponent,
+     UserDropdownNotificationComponent,
+     HeaderChefComponent,
+     UserDropdownChefComponent,
+     GestionprojetsComponent,
+     AddprojetComponent,
+     AddprojetadminComponent,
+     ListeprojetadminComponent,
+     DetailsprojetComponent,
+     GanttComponent
 
   ],
   imports: [
@@ -117,7 +144,7 @@ import { DetailcompetenceComponent } from './views/detailcompetence/detailcompet
     HttpClientModule,
     Ng2SearchPipeModule
     ],
-    providers: [DMWM_INTERCEPTOR],
+    providers: [DMWM_INTERCEPTOR,DatePipe],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

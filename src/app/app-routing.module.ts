@@ -24,6 +24,14 @@ import { GestioncompetenceComponent } from "./views/gestioncompetence/gestioncom
 import { UpdatecompetenceComponent } from "./views/updatecompetence/updatecompetence.component";
 import { AffectercompetenceComponent } from "./views/affectercompetence/affectercompetence.component";
 import { DetailcompetenceComponent } from "./views/detailcompetence/detailcompetence.component";
+import { ChefComponent } from "./layouts/chef/chef.component";
+import { DashbordChefComponent } from "./views/dashbord-chef/dashbord-chef.component";
+import { GestionprojetsComponent } from "./views/gestionprojets/gestionprojets.component";
+import { AddprojetComponent } from "./views/addprojet/addprojet.component";
+import { AddprojetadminComponent } from "./views/addprojetadmin/addprojetadmin.component";
+import { ListeprojetadminComponent } from "./views/listeprojetadmin/listeprojetadmin.component";
+import { GanttComponent } from "./views/gantt/gantt.component";
+import { DetailsprojetComponent } from "./views/detailsprojet/detailsprojet.component";
 
 
 
@@ -44,10 +52,31 @@ const routes: Routes = [
       { path: "edituser/:id", component: EdituserComponent , canActivate: [LoginGuard]},
       { path: "updatecompetence/:id", component: UpdatecompetenceComponent , canActivate: [LoginGuard]},
       { path: "deleteuser/:id", component: DeleteuserComponent , canActivate: [LoginGuard]},
+      { path: "AddProjet", component: AddprojetadminComponent , canActivate: [LoginGuard]},
+      { path: "projets", component: ListeprojetadminComponent , canActivate: [LoginGuard]},
+      { path: "datailprojet", component: DetailsprojetComponent , canActivate: [LoginGuard]},
+      //
       { path: "", redirectTo: "dashboard", pathMatch: "full"  },
     ],
   },
-
+  {
+    path: "chef",
+    component: ChefComponent,
+    children: [
+      { path: "dashboard", component: DashbordChefComponent , canActivate: [LoginGuard]},
+    //  { path: "addCompetence", component: AddcompetenceComponent , canActivate: [LoginGuard]},
+      { path: "Addprojet", component: AddprojetComponent , canActivate: [LoginGuard]},
+     { path: "gestionprojets", component: GestionprojetsComponent , canActivate: [LoginGuard]},
+    //  { path: "gestioncompetence", component: GestioncompetenceComponent , canActivate: [LoginGuard]},
+   //   { path: "affectercompetence", component: AffectercompetenceComponent , canActivate: [LoginGuard]},
+   //   { path: "detailuser/:id", component: DetailuserComponent , canActivate: [LoginGuard]},
+   //   { path: "detailcompetence/:id", component: DetailcompetenceComponent , canActivate: [LoginGuard]},
+    //  { path: "edituser/:id", component: EdituserComponent , canActivate: [LoginGuard]},
+    //  { path: "updatecompetence/:id", component: UpdatecompetenceComponent , canActivate: [LoginGuard]},
+    //  { path: "deleteuser/:id", component: DeleteuserComponent , canActivate: [LoginGuard]},
+      { path: "", redirectTo: "dashboard", pathMatch: "full"  },
+    ],
+  },
  
   // auth views
   {

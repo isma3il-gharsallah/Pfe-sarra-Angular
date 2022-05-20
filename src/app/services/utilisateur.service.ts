@@ -19,8 +19,7 @@ export class UtilisateurService {
 	  motdepasse : ["" , Validators.required],
 	  email : ["" , Validators.required],
 	  disponibilite :  ""  ,
-	  competences :  ""  ,
-	  privilege :  ""  ,
+ 	  privilege :  ""  ,
 
   });
 

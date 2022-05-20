@@ -18,7 +18,7 @@
       class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
     >
       <span class="block sm:hidden"> Gestion de flux de travail </span>
-      <span class="hidden sm:block"> Sarra Pfe </span>
+      <span class="hidden sm:block"> Chef d'équipe </span>
     </a>
     <!-- User -->
     <ul class="md:hidden items-center flex flex-wrap list-none">
@@ -26,7 +26,7 @@
         <app-notification-dropdown class="block"></app-notification-dropdown>
       </li>
       <li class="inline-block relative">
-        <app-user-dropdown class="block"></app-user-dropdown>
+        <app-user-dropdown-chef class="block"></app-user-dropdown-chef>
       </li>
     </ul>
     <!-- Collapse -->
@@ -79,23 +79,23 @@
       <ul class="md:flex-col md:min-w-full flex flex-col list-none">
         <li class="items-center">
           <a
-            [routerLink]="['/admin/dashboard']"
+            [routerLink]="['/chef/dashboard']"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
-            #adminDashboard="routerLinkActive"
+            #chefDashboard="routerLinkActive"
             [ngClass]="
-              adminDashboard.isActive
-                ? 'text-red-600 hover:text-red-700'
+              chefDashboard.isActive
+                ? 'text-blue-600 hover:text-blue-700'
                 : 'text-blueGray-700 hover:text-blueGray-500'
             "
           >
             <i
               class="fas fa-tv mr-2 text-sm"
               [ngClass]="
-                adminDashboard.isActive ? 'opacity-75' : 'text-blueGray-300'
+                chefDashboard.isActive ? 'opacity-75' : 'text-blueGray-300'
               "
             ></i>
-            Dashboard
+            Tableau de bord
           </a>
         </li>
  
@@ -105,99 +105,54 @@
       <h6
         class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
       >
-        Gestion des utilisateurs
+      Gestion des projets
       </h6>
       <!-- Navigation -->
 
       <ul class="md:flex-col md:min-w-full flex flex-col list-none">
         <li class="items-center">
           <a
-            [routerLink]="['/admin/adduser']"
+            [routerLink]="['/chef/Addprojet']"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
-            #adminAdduser="routerLinkActive"
+            #chefAddprojet="routerLinkActive"
             [ngClass]="
-            adminAdduser.isActive
-                ? 'text-red-600 hover:text-red-700'
+            chefAddprojet.isActive
+                ? 'text-blue-600 hover:text-blue-700'
                 : 'text-blueGray-700 hover:text-blueGray-500'
             "
           >
             <i
-              class="fas fa-user-plus	 mr-2 text-sm "
+              class="fas fa-calendar-plus	 mr-2 text-sm "
               [ngClass]="
-              adminAdduser.isActive ? 'opacity-75' : 'text-blueGray-300'
+              chefAddprojet.isActive ? 'opacity-75' : 'text-blueGray-300'
               "
             ></i>
-            Ajouter un utilisateur
+            Ajouter un projet
           </a>
         </li>
 
         <li class="items-center">
           <a
-            [routerLink]="['/admin/gestionuser']"
+            [routerLink]="['/chef/gestionprojets']"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
-            #GestionUtilisateurs="routerLinkActive"
+            #ListeProjets="routerLinkActive"
             [ngClass]="
-              GestionUtilisateurs.isActive
-                ? 'text-red-600 hover:text-red-700'
+              ListeProjets.isActive
+                ? 'text-blue-600 hover:text-blue-700'
                 : 'text-blueGray-700 hover:text-blueGray-500'
             "
           >
             <i
-              class="fas fa-user-friends mr-2 text-sm"
+              class="fas fa-building mr-2 text-sm"
               [ngClass]="
-              GestionUtilisateurs.isActive ? 'opacity-75' : 'text-blueGray-300'
+              ListeProjets.isActive ? 'opacity-75' : 'text-blueGray-300'
               "
             ></i>
-            Liste des utilisateurs
+            Liste des Projets
           </a>
-        </li>
-<!--
-        <li class="items-center">
-          <a
-            [routerLink]="['/admin/tables']"
-            class="text-xs uppercase py-3 font-bold block"
-            routerLinkActive
-            #adminTables="routerLinkActive"
-            [ngClass]="
-              adminTables.isActive
-                ? 'text-red-600 hover:text-red-700'
-                : 'text-blueGray-700 hover:text-blueGray-500'
-            "
-          >
-            <i
-              class="fas fa-table mr-2 text-sm"
-              [ngClass]="
-                adminTables.isActive ? 'opacity-75' : 'text-blueGray-300'
-              "
-            ></i>
-            Tables
-          </a>
-        </li>
-
-        <li class="items-center">
-          <a
-            [routerLink]="['/admin/maps']"
-            class="text-xs uppercase py-3 font-bold block"
-            routerLinkActive
-            #adminMaps="routerLinkActive"
-            [ngClass]="
-              adminMaps.isActive
-                ? 'text-red-600 hover:text-red-700'
-                : 'text-blueGray-700 hover:text-blueGray-500'
-            "
-          >
-            <i
-              class="fas fa-map-marked mr-2 text-sm"
-              [ngClass]="
-                adminMaps.isActive ? 'opacity-75' : 'text-blueGray-300'
-              "
-            ></i>
-            Maps
-          </a>
-        </li>
-      -->
+        </li> 
       </ul>
       <hr class="my-4 md:min-w-full" />
       <!-- Heading -->
@@ -211,20 +166,20 @@
       <ul class="md:flex-col md:min-w-full flex flex-col list-none">
         <li class="items-center">
           <a
-            [routerLink]="['/admin/addCompetence']"
+            [routerLink]="['/chef/addCompetence']"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
-            #adminAddcompetence="routerLinkActive"
+            #chefAddcompetence="routerLinkActive"
             [ngClass]="
-            adminAddcompetence.isActive
-                ? 'text-red-600 hover:text-red-700'
+            chefAddcompetence.isActive
+                ? 'text-blue-600 hover:text-blue-700'
                 : 'text-blueGray-700 hover:text-blueGray-500'
             "
           >
             <i
               class="fas fa-bullseye mr-2 text-sm"
               [ngClass]="
-              adminAddcompetence.isActive ? 'opacity-75' : 'text-blueGray-300'
+              chefAddcompetence.isActive ? 'opacity-75' : 'text-blueGray-300'
               "
             ></i>
             Ajouter compétence
@@ -233,13 +188,13 @@
 
         <li class="items-center">
           <a
-            [routerLink]="['/admin/gestioncompetence']"
+            [routerLink]="['/chef/gestioncompetence']"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
             #GestionCompetence="routerLinkActive"
             [ngClass]="
             GestionCompetence.isActive
-                ? 'text-red-600 hover:text-red-700'
+                ? 'text-blue-600 hover:text-blue-700'
                 : 'text-blueGray-700 hover:text-blueGray-500'
             "
           >
@@ -255,13 +210,13 @@
         
         <li class="items-center">
           <a
-            [routerLink]="['/admin/affectercompetence']"
+            [routerLink]="['/chef/affectercompetence']"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
             #affectercompetence="routerLinkActive"
             [ngClass]="
             affectercompetence.isActive
-                ? 'text-red-600 hover:text-red-700'
+                ? 'text-blue-600 hover:text-blue-700'
                 : 'text-blueGray-700 hover:text-blueGray-500'
             "
           >
@@ -276,65 +231,7 @@
         </li>
         
       </ul>
-
-      <hr class="my-4 md:min-w-full" />
-      <!-- Heading -->
-      <h6
-        class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
-      >
-        Gestion des projets
-      </h6>
-      <!-- Navigation -->
-
-      <ul class="md:flex-col md:min-w-full flex flex-col list-none">
-        <li class="items-center">
-          <a
-            [routerLink]="['/admin/AddProjet']"
-            class="text-xs uppercase py-3 font-bold block"
-            routerLinkActive
-            #adminAddprojet="routerLinkActive"
-            [ngClass]="
-            adminAddprojet.isActive
-                ? 'text-red-600 hover:text-red-700'
-                : 'text-blueGray-700 hover:text-blueGray-500'
-            "
-          >
-            <i
-              class="fas fa-calendar-plus mr-2 text-sm"
-              [ngClass]="
-              adminAddprojet.isActive ? 'opacity-75' : 'text-blueGray-300'
-              "
-            ></i>
-            Créer un projet
-          </a>
-        </li>
-
-        <li class="items-center">
-          <a
-            [routerLink]="['/admin/projets']"
-            class="text-xs uppercase py-3 font-bold block"
-            routerLinkActive
-            #adminListeprojets="routerLinkActive"
-            [ngClass]="
-            adminListeprojets.isActive
-                ? 'text-red-600 hover:text-red-700'
-                : 'text-blueGray-700 hover:text-blueGray-500'
-            "
-          >
-            <i
-              class="fas fa-calendar mr-2 text-sm"
-              [ngClass]="
-              adminListeprojets.isActive ? 'opacity-75' : 'text-blueGray-300'
-              "
-            ></i>
-            Liste des projet
-          </a>
-        </li>
-
-        
-  
-        
-      </ul>
+      
     </div>
   </div>
 </nav>
