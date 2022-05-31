@@ -8,7 +8,10 @@ export const environment = {
     UtilisateurApiUrl :'http://localhost:8080/Utilisateurs',
     CompetenceApiUrl : 'http://localhost:8080/Competences',
     UserCompetenceApiUrl : 'http://localhost:8080/UserCompetence',
-    ProjetApiUrl : 'http://localhost:8080/Projets'
+    ModuleApiUrl : 'http://localhost:8080/Modules',
+    TacheApiUrl : 'http://localhost:8080/Taches',
+    ProjetApiUrl : 'http://localhost:8080/Projets',
+    EquipeApiUrl : 'http://localhost:8080/Equipes',
 };
 
 /*

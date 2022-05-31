@@ -13,9 +13,24 @@
   >
     <a
       class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+
+      [routerLink]= "['/chef/gestion_equipe',id_projet]"
     >
-      LogOut
+     Gestion d'equipe
     </a>
-     
+    <a
+    class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+
+    [routerLink]= "['/chef/gestion_module',id_projet]"
+  >
+  Gestion module
+  </a>
+    <a
+    class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+
+    [routerLink]= "['/chef/datailprojet',id_projet]"
+  >
+    Diagramme Gantt
+  </a>
   </div>
 </div>

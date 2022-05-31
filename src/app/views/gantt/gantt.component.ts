@@ -48,7 +48,7 @@ export class GanttComponent implements OnInit {
                   // console.log(taskElem)
                   switch (taskElem.custom.taskStatus) {
                     case 'progress':
-                      taskElem.update({ color: '#FFF4D2' });
+                      taskElem.update({ color: '#FFCD00' });
                       break;
                     case 'completed':
                       taskElem.update({ color: '#EBF7EC' });

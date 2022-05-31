@@ -14,7 +14,7 @@ export class ProjetService {
 	  dateDebutprojet :  ["" , Validators.required],
 	  dateFinprojet :    ""  ,
 	  description : ["" , Validators.required],
-    titre_projet : ["" , Validators.required],
+    titre_projet :  ""  ,
 	  chefde_projet : ["" , Validators.required],
 	  rapport :  ["" , Validators.required],
 	  etat_projet :  ["" , Validators.required],
@@ -22,7 +22,7 @@ export class ProjetService {
    });
 
   listProjet:Projet[]
-
+ 
   constructor(private datePipe: DatePipe,private http: HttpClient, private fb: FormBuilder) {
 
    }
@@ -49,18 +49,23 @@ export class ProjetService {
      return this.http.get(environment.ProjetApiUrl + "/all" );
   }
 
+  All_Projet_chef(id){
+    return this.http.get(environment.ProjetApiUrl + "/allByChef?chefde_projet="+id );
+
+  }
+
   get_Projet(id:any) {
     return this.http.get(environment.ProjetApiUrl + "/get?id="+id);
   }
 
   initialiser(ev){
-    console.log(ev);
-    
+     
   this.formProjet.setValue(ev)
   
   }
 
   modifierProjet( dateDebutprojet , dateFinprojet) {
+     
     return this.http
   .post(
     environment.ProjetApiUrl + "/updateDate?dateDebutprojet="+
@@ -78,5 +83,14 @@ export class ProjetService {
 
   getNewProjet(id:any) {
     return this.http.get(environment.ProjetApiUrl + "/getNew?chefde_projet="+id);
+  }
+
+  
+  get_List_Modules(id:any) {
+    return this.http.get(environment.ModuleApiUrl + "/getListeModule?projet="+id);
+  }
+ 
+  get_List_Taches_Module(id:any) {
+    return this.http.get(environment.TacheApiUrl + "/getListeTache?module="+id);
   }
 }

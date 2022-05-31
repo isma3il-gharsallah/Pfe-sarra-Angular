@@ -134,7 +134,7 @@
 
         <li class="items-center">
           <a
-            [routerLink]="['/chef/gestionprojets']"
+            [routerLink]="['/chef/projets']"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
             #ListeProjets="routerLinkActive"
@@ -156,81 +156,7 @@
       </ul>
       <hr class="my-4 md:min-w-full" />
       <!-- Heading -->
-      <h6
-        class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
-      >
-        Gestion des compétences
-      </h6>
-      <!-- Navigation -->
-
-      <ul class="md:flex-col md:min-w-full flex flex-col list-none">
-        <li class="items-center">
-          <a
-            [routerLink]="['/chef/addCompetence']"
-            class="text-xs uppercase py-3 font-bold block"
-            routerLinkActive
-            #chefAddcompetence="routerLinkActive"
-            [ngClass]="
-            chefAddcompetence.isActive
-                ? 'text-blue-600 hover:text-blue-700'
-                : 'text-blueGray-700 hover:text-blueGray-500'
-            "
-          >
-            <i
-              class="fas fa-bullseye mr-2 text-sm"
-              [ngClass]="
-              chefAddcompetence.isActive ? 'opacity-75' : 'text-blueGray-300'
-              "
-            ></i>
-            Ajouter compétence
-          </a>
-        </li>
-
-        <li class="items-center">
-          <a
-            [routerLink]="['/chef/gestioncompetence']"
-            class="text-xs uppercase py-3 font-bold block"
-            routerLinkActive
-            #GestionCompetence="routerLinkActive"
-            [ngClass]="
-            GestionCompetence.isActive
-                ? 'text-blue-600 hover:text-blue-700'
-                : 'text-blueGray-700 hover:text-blueGray-500'
-            "
-          >
-            <i
-              class="fab fa-buromobelexperte mr-2 text-sm"
-              [ngClass]="
-              GestionCompetence.isActive ? 'opacity-75' : 'text-blueGray-300'
-              "
-            ></i>
-            Liste des competences
-          </a>
-        </li>
-        
-        <li class="items-center">
-          <a
-            [routerLink]="['/chef/affectercompetence']"
-            class="text-xs uppercase py-3 font-bold block"
-            routerLinkActive
-            #affectercompetence="routerLinkActive"
-            [ngClass]="
-            affectercompetence.isActive
-                ? 'text-blue-600 hover:text-blue-700'
-                : 'text-blueGray-700 hover:text-blueGray-500'
-            "
-          >
-            <i
-              class="fas fa-grip-lines mr-2 text-sm"
-              [ngClass]="
-              affectercompetence.isActive ? 'opacity-75' : 'text-blueGray-300'
-              "
-            ></i>
-            Affecter competences
-          </a>
-        </li>
-        
-      </ul>
+ 
       
     </div>
   </div>

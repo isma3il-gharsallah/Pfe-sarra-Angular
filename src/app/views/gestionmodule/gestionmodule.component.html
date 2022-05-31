@@ -1,0 +1,119 @@
+<div
+  class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0"
+>
+  <div class="rounded-t bg-white mb-0 px-6 py-6">
+    <div class="text-center flex justify-between">
+      <h6 class="text-blueGray-700 text-xl font-bold">Affecter un moudule à une equipe</h6>
+   
+    </div>
+  </div>
+  <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+    <form [formGroup]="_moduleService.formModule" autocomplete="off" (ngSubmit)="onSubmit()">
+ 
+      <div class="flex flex-wrap">
+        <div class="w-full lg:w-6/12 px-4">
+            <div class="relative w-full mb-3">
+              <label
+                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="grid-password"
+              >
+                Titre 
+              </label>
+              <input
+                type="text"
+                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                placeholder="Titre"
+                formControlName="name"
+                [class.is-invalid]="_moduleService.formModule.controls['name'].errors?.required"
+              />
+            </div>
+          </div>
+ 
+        <div class="w-full lg:w-4/12 px-4">
+          <div class="relative w-full mb-3">
+            <label
+              class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+              htmlFor="grid-password"
+            >
+              Equipe
+            </label>
+            <select
+               class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+              placeholder="equipe"
+              formControlName="equipe"
+              [class.is-invalid]="_moduleService.formModule.controls['equipe'].errors?.required"
+
+             >
+             <option  *ngFor="let equipe of _equipeService.listEquipe"
+             [value]="equipe.id_equipe" > {{equipe.nom_Equipe}}</option>
+             </select>
+          </div>
+        </div>
+        <div class="w-full lg:w-6/12 px-4">
+            <div class="relative w-full mb-3">
+              <label
+                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="grid-password"
+              >
+              Date Début
+              </label>
+       
+              <input class="datepicker-here form-control border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"  name="dateDebutprojet"  formControlName="dateDebutprojet"  
+                type="date" id="start" name="trip-start"
+               [value]="start"
+                [(ngModel)]="start" 
+                formControlName="start"
+  
+                > 
+            </div>
+          </div>
+        <div class="w-full lg:w-6/12 px-4">
+            <div class="relative w-full mb-3">
+              <label
+                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="grid-password"
+              >
+              Date Fin 
+              </label>
+              <input
+                type="date"
+                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                 formControlName="end"
+                [value]="end"
+                [(ngModel)]="end" 
+               />
+            </div>
+          </div>
+ 
+
+      </div>
+ 
+ 
+      <div class="align-self-center mx-auto text-center" style="padding-top: 15px;">
+      <button  *ngIf="!submit" 
+      class="bg-red-600 text-white active:bg-red-700 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+      type="submit"  
+      >
+      Affecter
+    </button></div>
+
+
+    <!--
+
+        [routerLink]= "['/chef/datailprojet',id_projet]"
+    -->
+    <div *ngIf="submit" class="alert alert-success" style="background-color: rgb(98, 223, 98);height: 50px;text-align: center;">Une compétence a été affecter avec succès
+    <br> <span >
+        <a
+        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+    
+        [routerLink]= "['/chef/datailprojet', id]"
+      >
+        Diagramme Gantt
+      </a>
+
+    </span>
+    </div>
+</form>
+  </div>
+</div>

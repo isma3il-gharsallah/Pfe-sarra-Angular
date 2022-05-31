@@ -74,6 +74,10 @@ import { DatePipe } from "@angular/common";
 import { ListeprojetadminComponent } from './views/listeprojetadmin/listeprojetadmin.component';
 import { DetailsprojetComponent } from './views/detailsprojet/detailsprojet.component';
 import { GanttComponent } from './views/gantt/gantt.component';
+import { ListeprojetschefComponent } from './views/listeprojetschef/listeprojetschef.component';
+import { GestionequipeComponent } from './views/gestionequipe/gestionequipe.component';
+import { ModifyequipeComponent } from './views/modifyequipe/modifyequipe.component';
+import { GestionmoduleComponent } from './views/gestionmodule/gestionmodule.component';
 
 
 @NgModule({
@@ -132,7 +136,11 @@ import { GanttComponent } from './views/gantt/gantt.component';
      AddprojetadminComponent,
      ListeprojetadminComponent,
      DetailsprojetComponent,
-     GanttComponent
+     GanttComponent,
+     ListeprojetschefComponent,
+     GestionequipeComponent,
+     ModifyequipeComponent,
+     GestionmoduleComponent,
 
   ],
   imports: [
@@ -142,7 +150,8 @@ import { GanttComponent } from './views/gantt/gantt.component';
      FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    
     ],
     providers: [DMWM_INTERCEPTOR,DatePipe],
     bootstrap: [AppComponent],

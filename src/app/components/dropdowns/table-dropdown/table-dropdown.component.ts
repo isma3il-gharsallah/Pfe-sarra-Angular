@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild, ElementRef } from "@angular/core";
+import { Component, AfterViewInit, ViewChild, ElementRef, Input } from "@angular/core";
 import { createPopper } from "@popperjs/core";
 
 @Component({
@@ -7,6 +7,7 @@ import { createPopper } from "@popperjs/core";
 })
 export class TableDropdownComponent implements AfterViewInit {
   dropdownPopoverShow = false;
+  @Input() id_projet ;
   @ViewChild("btnDropdownRef", { static: false }) btnDropdownRef: ElementRef;
   @ViewChild("popoverDropdownRef", { static: false })
   popoverDropdownRef: ElementRef;
@@ -18,6 +19,8 @@ export class TableDropdownComponent implements AfterViewInit {
         placement: "bottom-start",
       }
     );
+    //console.log(this.id_projet);
+    
   }
   toggleDropdown(event) {
     event.preventDefault();

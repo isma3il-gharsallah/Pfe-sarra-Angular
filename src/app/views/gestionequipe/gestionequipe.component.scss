@@ -1,0 +1,204 @@
+//Sign Up buttons
+.sign-up-btn{
+width: 67px;
+height: 36px;
+display:flex;
+background:white;
+border: 1px solid #C3C3C3;
+box-sizing: border-box;
+border-radius: 2px;
+font-size: 10px;
+text-align: center;
+text-transform: uppercase;
+color: #262B3D;
+
+&.complete{
+margin-left:auto;
+margin-right:132px;
+justify-content: center;
+}
+&.new{
+margin-right: 132px;
+margin-left:auto;
+margin-top: 11px;
+justify-content: center;
+}
+
+}
+
+.dashboard{
+  display: flex;
+  flex-wrap:wrap;
+  .card{
+    font-family: Gotham Rounded;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding:0;
+    width: 328px;
+    height: 178px;
+
+    .card-title{
+      display:flex;
+
+    .title{
+      font-size: 20px;
+      color: #262B3D;
+      margin-left:15px;
+      margin-top:16.6px;
+
+    }
+    .hexagon{
+      // width: 25px;
+      // height: 28px;
+      margin-left:21px;
+      margin-top:16px;
+    }
+    }
+    .description{
+      height: 54px;
+      width:274px;
+      font-size: 12px;
+      color: #525252;
+      margin-left: 31px;
+      margin-right:23px;
+      margin-bottom:9px;
+      margin-top:16px;
+      overflow: auto;
+      
+    }
+    .unlocked-role{
+      display:flex;
+      flex-direction: column;
+      .progress-container{
+       progress {
+         background-color: #f3f3f3;
+         width:190px;
+         height:12px;
+         margin-left:56px;
+}
+      progress::-webkit-progress-bar {
+        background: #DFDFDF;
+}
+      progress::-webkit-progress-value {
+        background: #B0BBFD;
+}  
+        label{
+          margin-left:10px;
+          font-size: 10px;
+          color: #262B3D;
+
+        }
+      }
+      .in-progress{
+        margin-top:15px;
+        margin-right:23px;
+        margin-left:auto;
+        .resume-role{
+          border:none;
+          background:none;
+        font-size: 10px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #262B3D;
+        border-radius: 5px;
+        }
+      }
+      .completed-before{
+        display:flex;
+        margin-top:11px;
+        .completed{
+          margin-left:15px;
+          margin-top:4px;
+          font-size: 10px;
+          text-align: center;
+          text-transform: uppercase;
+          color: #262B3D;
+          border-radius: 5px;
+}  
+
+
+      }
+
+
+      }
+  .locked-role{
+
+    .prereq-title{
+      margin-left:19px;
+      font-size: 8px;
+      text-transform: uppercase;
+
+      color: #2F2F2F;
+    }
+    .remaining-prereqs{
+      display: flex;
+      margin-left:20px;
+      margin-top:4px;
+      
+    .check-for-prereq{
+      padding:0;
+      margin-right: 6px;
+
+      .iterate-cards{
+        padding:0;
+        
+      }
+    }
+    }
+  }
+
+
+    //   .sign-up-section{
+    //     display:flex;
+        
+    //     .completed{
+    //       font-size: 10px;
+    //       text-align: center;
+    //       text-transform: uppercase;
+    //       margin-left:15px;
+    //       margin-top:15px;
+    //     }
+    //     .sign-up-btn{
+
+    //     }
+    //     &.completed{
+    //        width: 67px;
+    //       height: 21px;
+    //       text-align: center;
+    //       border: 1px solid #C3C3C3;
+    //     box-sizing: border-box;
+    //     border-radius: 2px;
+    //     background: #FFFFFF;
+    //    font-size: 10px;
+       
+    //    text-transform: uppercase;
+    //    color: #262B3D;
+       
+    //     margin-top:11px;
+    //     margin-left:33px;
+
+    //     }
+    //     &.sign-up{
+
+    //     }
+    //     &.wip{
+    //       width: 67px;
+    //       height: 21px;
+    //       border: 1px solid #C3C3C3;
+    //     box-sizing: border-box;
+    //     border-radius: 2px;
+    //     background: #FFFFFF;
+    //    font-size: 10px;
+    //    text-align: center;
+    //    text-transform: uppercase;
+    //    color: #262B3D;
+       
+    //     margin-top:11px;
+    //     margin-left:33px;
+
+    //     }
+    //   }
+    // }
+
+  }
+}
