@@ -11,16 +11,8 @@
     <form [formGroup]="_utilisateurService.formUtilisateur" autocomplete="off" (ngSubmit)="onSubmit()">
       <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
         Information générale 
-        <input
-        style="display: none;"
-        formControlName="id_utilisateur"
-        [class.is-invalid]="_utilisateurService.formUtilisateur.controls['id_utilisateur'].errors?.required"
-      />
-      <input
-      style="display: none;"
-      formControlName="privilege"
-      [class.is-invalid]="_utilisateurService.formUtilisateur.controls['privilege'].errors?.required"
-    />
+      
+     
       </h6>
       <div class="flex flex-wrap">
  
@@ -137,7 +129,48 @@
               />
             </div>
           </div>
-
+          <div class="w-full lg:w-6/12 px-4">
+            <div class="relative w-full mb-3">
+              <label
+                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="grid-password"
+              >
+              Disponibilité
+              </label>
+              <select
+                type="text"
+                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                placeholder="disponibilite" 
+                formControlName="disponibilite"
+                [class.is-invalid]="_utilisateurService.formUtilisateur.controls['disponibilite'].errors?.required"
+              >
+              <option value="Disponible">Disponible</option>
+              <option value="En travail">En travail</option>
+              <option value="En congé">En congé</option>
+              </select>
+            </div>
+          </div>
+          <div class="w-full lg:w-6/12 px-4">
+            <div class="relative w-full mb-3">
+              <label
+                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="grid-password"
+              >
+              Privilège
+              </label>
+              <select
+                type="text"
+                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                placeholder="privilege" 
+                formControlName="privilege"
+                [class.is-invalid]="_utilisateurService.formUtilisateur.controls['privilege'].errors?.required"
+              >
+              <option  *ngFor="let privilege of _utilisateurService.listPrivilege"
+              [value]="privilege.id_privilege" > {{privilege.titre}}</option>
+              
+              </select>
+            </div>
+          </div>
       </div>
     
       <div class="align-self-center mx-auto text-center" style="padding-top: 15px;">

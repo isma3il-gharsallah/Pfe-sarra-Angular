@@ -22,7 +22,7 @@ export class UtilisateurService {
  	  privilege :  ""  ,
 
   });
-
+  listPrivilege:[]
   listUtilisateur:Utilisateur[]
 
   constructor(private http: HttpClient, private fb: FormBuilder) {
@@ -41,22 +41,24 @@ export class UtilisateurService {
       +"&motdepasse="+this.formUtilisateur.value['motdepasse']
       +"&email="+this.formUtilisateur.value['email']
       +"&privilege=111"
-      +"&disponibilite=111"
+      +"&disponibilite=Disponible"
       ,JSON.stringify(''))
- 
   }
 
   All_utilisateur() {
- 
-
      return this.http.get(environment.UtilisateurApiUrl + "/all" );
   }
+
+  All_Privilege() {
+    return this.http.get(environment.PrivilegeApiUrl + "/all" );
+ }
 
   get_utilisateur(id:any) {
     return this.http.get(environment.UtilisateurApiUrl + "/get?id="+id);
   }
 
   initialiser(ev){
+    ev.privilege=ev.privilege.id_privilege
  this.formUtilisateur.setValue(ev)
   }
 
@@ -71,7 +73,8 @@ export class UtilisateurService {
     +"&motdepasse="+this.formUtilisateur.value['motdepasse']
     +"&email="+this.formUtilisateur.value['email']
     +"&id_utilisateur="+this.formUtilisateur.value['id_utilisateur']
-    +"&privilege="+this.formUtilisateur.value['privilege'].id_privilege
+    +"&disponibilite="+this.formUtilisateur.value['disponibilite']
+    +"&privilege="+this.formUtilisateur.value['privilege']
 
     ,JSON.stringify(''))
   }

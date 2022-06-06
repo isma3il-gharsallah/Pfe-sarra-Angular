@@ -1,12 +1,10 @@
-
-<!--
-<div class="relative flex w-full flex-wrap items-stretch" style="margin-bottom: 20px;">
-    <span class="z-10 h-full leading-snug font-normal absolute text-center text-blueGray-300 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3">
-        <i class="fas fa-search"></i>
-    </span>
-    <input type="text" placeholder="Search here..." [(ngModel)]="search" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:ring w-full pl-10">
+ 
+ <div class="relative flex w-full flex-wrap items-stretch" style="margin-bottom: 20px;">
+  <span class="z-10 h-full leading-snug font-normal absolute text-center text-blueGray-300 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3">
+      <i class="fas fa-search"></i>
+  </span>
+  <input type="text" placeholder="Search here..." [(ngModel)]="search" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:ring w-full pl-10">
 </div>
--->
 <div
   class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded"
   [ngClass]="color === 'light' ? 'bg-white' : 'bg-red-900 text-white'"
@@ -90,7 +88,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr  *ngFor="let user of listUtilisateur ">
+        <tr  *ngFor="let user of listUtilisateur  | filter:search">
           <th
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
           >
@@ -121,7 +119,7 @@
           <td
           class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
         >
-        <i class="fas fa-circle   mr-4" style="color: green;" ></i>  {{user.disponibilite}}
+        <i class="fas fa-circle   mr-4"  [ngStyle]="{'color': user.disponibilite=='Disponible' ? 'green' : (user.disponibilite!='Disponible' ? 'red' : null) }" ></i>  {{user.disponibilite}}
      </td>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center"

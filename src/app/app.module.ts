@@ -78,6 +78,12 @@ import { ListeprojetschefComponent } from './views/listeprojetschef/listeprojets
 import { GestionequipeComponent } from './views/gestionequipe/gestionequipe.component';
 import { ModifyequipeComponent } from './views/modifyequipe/modifyequipe.component';
 import { GestionmoduleComponent } from './views/gestionmodule/gestionmodule.component';
+import { ModifymoduleComponent } from './views/modifymodule/modifymodule.component';
+import { ProjetComponent } from './layouts/projet/projet.component';
+import { SidebarProjetComponent } from './components/sidebar-projet/sidebar-projet.component';
+import { ProjetNavbarComponent } from './components/navbars/projet-navbar/projet-navbar.component';
+import { AddmoduleComponent } from './views/addmodule/addmodule.component';
+import { AddequipeComponent } from './views/addequipe/addequipe.component';
 
 
 @NgModule({
@@ -141,6 +147,12 @@ import { GestionmoduleComponent } from './views/gestionmodule/gestionmodule.comp
      GestionequipeComponent,
      ModifyequipeComponent,
      GestionmoduleComponent,
+     ModifymoduleComponent,
+     ProjetComponent,
+     SidebarProjetComponent,
+     ProjetNavbarComponent,
+     AddmoduleComponent,
+     AddequipeComponent,
 
   ],
   imports: [

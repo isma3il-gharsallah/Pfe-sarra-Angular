@@ -6,6 +6,7 @@ export const environment = {
     production: false,
     GlobaleApiUrl : 'http://localhost:8080',
     UtilisateurApiUrl :'http://localhost:8080/Utilisateurs',
+    PrivilegeApiUrl :'http://localhost:8080/Privileges',
     CompetenceApiUrl : 'http://localhost:8080/Competences',
     UserCompetenceApiUrl : 'http://localhost:8080/UserCompetence',
     ModuleApiUrl : 'http://localhost:8080/Modules',

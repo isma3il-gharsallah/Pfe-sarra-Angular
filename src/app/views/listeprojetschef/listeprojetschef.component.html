@@ -81,7 +81,7 @@ class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded"
       </tr>
     </thead>
     <tbody>
-      <tr  *ngFor="let projet of listProjet" >
+      <tr  *ngFor="let projet of listProjet" [routerLink]="['/projet',projet.id_projet]" >
         <th
           class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
         >

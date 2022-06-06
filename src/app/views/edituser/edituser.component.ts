@@ -11,7 +11,7 @@ import { UtilisateurService } from 'src/app/services/utilisateur.service';
 })
 export class EdituserComponent implements OnInit {
   id: any;
-  submit: boolean;
+  submit=false;
 
    constructor(public _utilisateurService:UtilisateurService,private route: ActivatedRoute) {}
  
@@ -22,6 +22,11 @@ export class EdituserComponent implements OnInit {
     this._utilisateurService.get_utilisateur(this.id).subscribe(res => {
       this._utilisateurService.initialiser(res)
       })
+
+      this._utilisateurService.All_Privilege().subscribe(res => {
+        this._utilisateurService.listPrivilege = res as []
+ 
+        })
   }
 
 

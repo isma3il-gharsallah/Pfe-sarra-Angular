@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
  import { Equipe } from 'src/app/models/equipe/Equipe.model';
 import { Module } from 'src/app/models/Module/module.model';
@@ -7,19 +7,12 @@ import { ModuleService } from 'src/app/services/module.service';
 import { ProjetService } from 'src/app/services/projet.service';
 
 @Component({
-  selector: 'app-gestionmodule',
-  templateUrl: './gestionmodule.component.html',
-  styleUrls: ['./gestionmodule.component.scss']
+  selector: 'app-addmodule',
+  templateUrl: './addmodule.component.html',
+  styleUrls: ['./addmodule.component.css']
 })
-export class GestionmoduleComponent implements OnInit {
-  @Input()
-  get color(): string {
-    return this._color;
-  }
-  set color(color: string) {
-    this._color = color !== "light" && color !== "dark" ? "light" : color;
-  }
-  private _color = "dark";
+export class AddmoduleComponent implements OnInit {
+
   listEquipe: Equipe[];
   listModules: Module[]
   id: any;

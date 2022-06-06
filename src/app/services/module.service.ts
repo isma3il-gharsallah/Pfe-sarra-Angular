@@ -12,13 +12,14 @@ import { DatePipe } from '@angular/common';
 export class ModuleService {
  
   formModule=this.fb.group({
-    id_Module : ["" , Validators.required],
+    id_module : ["" , Validators.required],
 	  name : ["" , Validators.required],
 	  start : ["" , Validators.required],
 	  end : ["" , Validators.required],
 	  custom : ["" , Validators.required],
 	  projet : ["" , Validators.required],
 	  equipe : ["" , Validators.required],
+	  collapsed : ["" , Validators.required],
   });
  
  
@@ -29,13 +30,13 @@ export class ModuleService {
    }
 
 
-  insertModule(id) {
+  insertModule(id,start,end) {
       return this.http
     .post(
       environment.ModuleApiUrl + "/save?name="+
       this.formModule.value['name']
-      +"&start="+this.formModule.value['start']
-      +"&end="+this.formModule.value['end']
+      +"&start="+this.datePipe.transform( start, 'yyyy/MM/dd') 
+      +"&end="+this.datePipe.transform( end, 'yyyy/MM/dd') 
       +"&equipe="+this.formModule.value['equipe']
       +"&projet="+id
       +"&custom=progress" 
@@ -52,7 +53,8 @@ export class ModuleService {
   }
 
   initialiser(ev){
-     
+     console.log(ev);
+     ev.equipe=ev.equipe.id_equipe
  this.formModule.setValue(ev)
   }
 
@@ -64,7 +66,9 @@ export class ModuleService {
     +"&start="+this.datePipe.transform( start, 'yyyy/MM/dd') 
     +"&end="+this.datePipe.transform( end, 'yyyy/MM/dd') 
     +"&equipe="+this.formModule.value['equipe']
-    +"&projet="+id
+    +"&id_module="+id
+    +"&custom="+this.formModule.value['custom'].taskStatus
+    +"&projet="+this.formModule.value['projet'].id_projet
     ,JSON.stringify(''))
   }
 

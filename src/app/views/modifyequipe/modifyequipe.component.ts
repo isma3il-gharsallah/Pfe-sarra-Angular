@@ -10,7 +10,7 @@ import { EquipeService } from 'src/app/services/equipe.service';
   styleUrls: ['./modifyequipe.component.css']
 })
 export class ModifyequipeComponent implements OnInit {
-  submit: boolean;
+  submit=false;
    id: any;
   myGroup: FormGroup;
   selection: any[];
@@ -51,6 +51,8 @@ export class ModifyequipeComponent implements OnInit {
            }
    )
   }
+
+
   onSubmit(){
     this.AddEquipe();
   }

@@ -36,6 +36,9 @@ import { ListeprojetschefComponent } from "./views/listeprojetschef/listeprojets
 import { GestionequipeComponent } from "./views/gestionequipe/gestionequipe.component";
 import { ModifyequipeComponent } from "./views/modifyequipe/modifyequipe.component";
 import { GestionmoduleComponent } from "./views/gestionmodule/gestionmodule.component";
+import { ModifymoduleComponent } from "./views/modifymodule/modifymodule.component";
+import { ProjetComponent } from "./layouts/projet/projet.component";
+import { AddmoduleComponent } from "./views/addmodule/addmodule.component";
 
 
 
@@ -73,14 +76,25 @@ const routes: Routes = [
      { path: "gestionprojets", component: GestionprojetsComponent , canActivate: [LoginGuard]},
      { path: "projets", component: ListeprojetschefComponent , canActivate: [LoginGuard]},
      { path: "datailprojet/:id", component: DetailsprojetComponent  },
-     { path: "gestion_equipe/:id", component: GestionequipeComponent  , canActivate: [LoginGuard] },
-     { path: "modifier_equipe/:id", component: ModifyequipeComponent  , canActivate: [LoginGuard] },
-     { path: "gestion_module/:id", component: GestionmoduleComponent  , canActivate: [LoginGuard] },
 
+//modifier_module
       { path: "", redirectTo: "dashboard", pathMatch: "full"  },
     ],
   },
- 
+  {
+    path: "projet/:id",
+    component: ProjetComponent,
+    children: [
+      { path: "gestion_equipe/:id", component: GestionequipeComponent  , canActivate: [LoginGuard] },
+      { path: "gestion_module/:id", component: GestionmoduleComponent  , canActivate: [LoginGuard] },
+      { path: "modifier_equipe/:id", component: ModifyequipeComponent  , canActivate: [LoginGuard] },
+      { path: "modifier_module/:id", component: ModifymoduleComponent  , canActivate: [LoginGuard] },
+      { path: "addmodule/:id", component: AddmoduleComponent  , canActivate: [LoginGuard] },
+
+//modifier_module
+      { path: "", redirectTo: "dashboard", pathMatch: "full"  },
+    ],
+  },
   // auth views
   {
     path: "auth",

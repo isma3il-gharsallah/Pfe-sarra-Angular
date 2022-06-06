@@ -4,13 +4,13 @@ import { $ } from 'protractor';
 import { Equipe } from 'src/app/models/equipe/Equipe.model';
 import { EquipeService } from 'src/app/services/equipe.service';
 
-@Component({
-  selector: 'app-gestionequipe',
-  templateUrl: './gestionequipe.component.html',
-  styleUrls: ['./gestionequipe.component.scss']
-})
-export class GestionequipeComponent implements OnInit {
 
+@Component({
+  selector: 'app-addequipe',
+  templateUrl: './addequipe.component.html',
+  styleUrls: ['./addequipe.component.css']
+})
+export class AddequipeComponent implements OnInit {
   cards;
   submit: boolean;
   listEquipe: Equipe[];
@@ -73,4 +73,3 @@ export class GestionequipeComponent implements OnInit {
       
   }
 }
-

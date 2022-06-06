@@ -28,8 +28,7 @@ export class GestionuserComponent implements OnInit {
   Listeusers(){
     this._utilisateurService.All_utilisateur().subscribe(res => {
       this.listUtilisateur = res as Utilisateur[]
-      console.log(res);
-      
+       
       })
   }
 
